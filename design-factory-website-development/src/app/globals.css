@@ -1,0 +1,188 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #42291d;
+  --color-copper: #b66a2d;
+  --color-cream: #faf7f2;
+  --color-sand: #f1e7da;
+  --color-paper: #ffffff;
+  --color-mocha: #6b4a34;
+  --color-muted: #8b7461;
+  --font-body: "Cairo", "Manrope", sans-serif;
+}
+
+:root {
+  --ink: #42291d;
+  --copper: #b66a2d;
+  --cream: #faf7f2;
+  --sand: #f1e7da;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 96px;
+}
+
+body {
+  background: var(--cream);
+  color: var(--ink);
+  font-family: "Cairo", "Manrope", sans-serif;
+  overflow-x: hidden;
+}
+
+html[lang="en"] body {
+  font-family: "Manrope", "Cairo", sans-serif;
+}
+
+::selection {
+  background: var(--copper);
+  color: #fff;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #f5ede3;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--copper);
+  border-radius: 20px;
+}
+
+@layer components {
+  .container-x {
+    @apply mx-auto w-full max-w-[1280px] px-5 sm:px-8 lg:px-10;
+  }
+
+  .btn-main {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-copper px-6 py-3 text-sm font-bold text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-ink hover:shadow-lg;
+  }
+  .btn-ink {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-ink px-6 py-3 text-sm font-bold text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-copper hover:shadow-lg;
+  }
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-ink/25 bg-white/70 px-6 py-3 text-sm font-bold text-ink transition-all duration-300 hover:border-copper hover:bg-copper hover:text-white;
+  }
+  .btn-light {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-white/50 bg-white/10 px-6 py-3 text-sm font-bold text-white backdrop-blur-md transition-all duration-300 hover:bg-white hover:text-ink;
+  }
+  .btn-small {
+    @apply px-4 py-2 text-xs;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-xs font-extrabold tracking-[0.22em] text-copper uppercase;
+  }
+  .section-title {
+    @apply text-3xl leading-[1.3] font-extrabold text-ink sm:text-4xl lg:text-[2.75rem];
+  }
+  .section-p {
+    @apply max-w-2xl text-base leading-[1.9] text-ink/65;
+  }
+  .card-soft {
+    @apply rounded-3xl border border-ink/8 bg-white shadow-[0_18px_50px_-30px_rgba(66,41,29,0.45)] transition-all duration-300;
+  }
+  .field-input {
+    @apply w-full rounded-xl border border-ink/15 bg-cream/60 px-4 py-3 text-sm text-ink outline-none transition focus:border-copper focus:bg-white focus:ring-2 focus:ring-copper/20;
+  }
+  .field-label {
+    @apply mb-1.5 block text-xs font-bold text-ink/75;
+  }
+  .glass-panel {
+    @apply rounded-3xl border border-white/20 bg-white/10 backdrop-blur-md;
+  }
+}
+
+.gradient-text {
+  background: linear-gradient(100deg, #b66a2d 0%, #e0a45f 45%, #42291d 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero-shade {
+  background: linear-gradient(
+    90deg,
+    rgba(30, 17, 10, 0.92) 0%,
+    rgba(44, 26, 16, 0.75) 45%,
+    rgba(44, 26, 16, 0.2) 100%
+  );
+}
+html[dir="rtl"] .hero-shade {
+  background: linear-gradient(
+    270deg,
+    rgba(30, 17, 10, 0.92) 0%,
+    rgba(44, 26, 16, 0.75) 45%,
+    rgba(44, 26, 16, 0.2) 100%
+  );
+}
+
+.hero-zoom {
+  animation: heroZoom 18s ease-in-out infinite alternate;
+}
+@keyframes heroZoom {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.09);
+  }
+}
+
+.reveal {
+  animation: revealUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+@keyframes revealUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease both;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.soft-grid {
+  background-image: radial-gradient(rgba(182, 106, 45, 0.16) 1px, transparent 1px);
+  background-size: 26px 26px;
+}
+
+.wood-pattern {
+  background-image: repeating-linear-gradient(
+    90deg,
+    rgba(66, 41, 29, 0.05) 0px,
+    rgba(66, 41, 29, 0.05) 2px,
+    transparent 2px,
+    transparent 16px
+  );
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.logo-multiply {
+  mix-blend-mode: multiply;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 0.55;
+}
