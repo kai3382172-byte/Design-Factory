@@ -1,5 +1,7 @@
 "use client";
 
+import { company } from "@/lib/content";
+import { IS_STATIC } from "@/lib/asset";
 import {
   createContext,
   useCallback,
@@ -125,6 +127,28 @@ export function SiteProvider({ children, products }: { children: ReactNode; prod
   const clearCart = useCallback(() => setCart([]), []);
 
   const postRequest = useCallback(async (payload: RequestPayload) => {
+    if (IS_STATIC) {
+      // Static hosting has no database: send the request through WhatsApp instead.
+      const labels: Record<string, string> = {
+        appointment: "حجز موعد / Appointment",
+        maintenance: "صيانة / Maintenance",
+        contact: "تواصل / Contact",
+        order: "طلب / Order",
+      };
+      const lines = [
+        `*${labels[String(payload.kind)] ?? "Request"}* - Design Factory`,
+        `الاسم / Name: ${payload.name ?? ""}`,
+        `الهاتف / Phone: ${payload.phone ?? ""}`,
+        payload.email ? `Email: ${payload.email}` : "",
+        payload.city ? `العنوان / City: ${payload.city}` : "",
+        payload.topic ? `الموضوع / Topic: ${payload.topic}` : "",
+        payload.message ? `${payload.message}` : "",
+        typeof payload.total === "number" ? `الإجمالي / Total: ${payload.total}` : "",
+      ].filter(Boolean);
+      const url = `${company.whatsapp}?text=${encodeURIComponent(lines.join("\n"))}`;
+      window.open(url, "_blank", "noopener,noreferrer");
+      return true;
+    }
     try {
       const response = await fetch("/api/requests", {
         method: "POST",

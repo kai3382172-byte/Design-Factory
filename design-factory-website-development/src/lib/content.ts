@@ -1,3 +1,4 @@
+import { asset } from "@/lib/asset";
 import type { BiText } from "./i18n";
 
 export const company = {
@@ -15,8 +16,8 @@ export const company = {
   catalog: "https://drive.google.com/file/d/16xpdGrjrmUExJ7XKJRgYKtdlBgWrHxEe/view?usp=drive_link",
   map: "https://www.google.com/maps?q=Giza%2C%20Egypt&output=embed",
   video: "https://videos.pexels.com/video-files/20374770/20374770-hd_1920_1080_30fps.mp4",
-  videoPoster: "/images/workshop.jpg",
-  logo: "/images/design-factory-logo.jpg",
+  videoPoster: asset("/images/workshop.jpg"),
+  logo: asset("/images/design-factory-logo.jpg"),
 };
 
 export type ProjectCategory =
@@ -42,7 +43,7 @@ export type Project = {
 export const projects: Project[] = [
   {
     id: 1,
-    image: "/images/hero-kitchen.jpg",
+    image: asset("/images/hero-kitchen.jpg"),
     category: "kitchens",
     title: { ar: "مطبخ رخامي بقشرة الجوز", en: "Walnut & marble kitchen" },
     desc: {
@@ -56,7 +57,7 @@ export const projects: Project[] = [
   },
   {
     id: 2,
-    image: "/images/kitchen-marble.jpg",
+    image: asset("/images/kitchen-marble.jpg"),
     category: "kitchens",
     title: { ar: "مطبخ L برخام ذهبي", en: "L-shaped golden marble kitchen" },
     desc: {
@@ -69,7 +70,7 @@ export const projects: Project[] = [
   },
   {
     id: 3,
-    image: "/images/dressing-room.jpg",
+    image: asset("/images/dressing-room.jpg"),
     category: "dressing",
     title: { ar: "دريسنج روم بإطار نحاسي", en: "Brass-framed dressing room" },
     desc: {
@@ -82,7 +83,7 @@ export const projects: Project[] = [
   },
   {
     id: 4,
-    image: "/images/bedroom.jpg",
+    image: asset("/images/bedroom.jpg"),
     category: "bedrooms",
     title: { ar: "غرفة نوم بجدار خشبي", en: "Bedroom with a walnut wall" },
     desc: {
@@ -95,7 +96,7 @@ export const projects: Project[] = [
   },
   {
     id: 5,
-    image: "/images/living-tv.jpg",
+    image: asset("/images/living-tv.jpg"),
     category: "living",
     title: { ar: "جدار تلفزيون بقصبان خشبية", en: "Wood-slat TV feature wall" },
     desc: {
@@ -109,7 +110,7 @@ export const projects: Project[] = [
   },
   {
     id: 6,
-    image: "/images/bathroom.jpg",
+    image: asset("/images/bathroom.jpg"),
     category: "baths",
     title: { ar: "مغسلة رخامية معلّقة", en: "Floating marble vanity" },
     desc: {
@@ -122,7 +123,7 @@ export const projects: Project[] = [
   },
   {
     id: 7,
-    image: "/images/balcony.jpg",
+    image: asset("/images/balcony.jpg"),
     category: "outdoor",
     title: { ar: "بلكونة مغلقة بالزجاج", en: "Glazed sunroom balcony" },
     desc: {
@@ -135,7 +136,7 @@ export const projects: Project[] = [
   },
   {
     id: 8,
-    image: "/images/exterior.jpg",
+    image: asset("/images/exterior.jpg"),
     category: "outdoor",
     title: { ar: "شترات لواجهة فيلا", en: "Villa facade shutters" },
     desc: {
@@ -148,7 +149,7 @@ export const projects: Project[] = [
   },
   {
     id: 9,
-    image: "/images/showroom.jpg",
+    image: asset("/images/showroom.jpg"),
     category: "kitchens",
     title: { ar: "معرض ديزاين فاكتوري", en: "The Design Factory showroom" },
     desc: {
@@ -281,7 +282,7 @@ export const productSeeds: ProductSeed[] = [
     descEn: "Ready-made island in natural walnut veneer with a Calacatta marble top and stainless sink.",
     category: "kitchens",
     price: 38500,
-    image: "/images/hero-kitchen.jpg",
+    image: asset("/images/hero-kitchen.jpg"),
     badgeAr: "الأكثر طلبًا",
     badgeEn: "Bestseller",
     stock: 4,
@@ -295,7 +296,7 @@ export const productSeeds: ProductSeed[] = [
     descEn: "Ready L-shaped kitchen unit with black-framed glass cabinets and integrated LED lighting.",
     category: "kitchens",
     price: 27900,
-    image: "/images/kitchen-marble.jpg",
+    image: asset("/images/kitchen-marble.jpg"),
     badgeAr: "تسليم فوري",
     badgeEn: "Fast delivery",
     stock: 6,
@@ -309,7 +310,7 @@ export const productSeeds: ProductSeed[] = [
     descEn: "Smoked glass doors, brass profiles and illuminated shelving, ready to install.",
     category: "dressing",
     price: 24500,
-    image: "/images/dressing-room.jpg",
+    image: asset("/images/dressing-room.jpg"),
     badgeAr: "كمية محدودة",
     badgeEn: "Limited stock",
     stock: 3,
@@ -323,7 +324,7 @@ export const productSeeds: ProductSeed[] = [
     descEn: "Full wardrobe wall with a lit glass display niche and integrated vanity.",
     category: "bedrooms",
     price: 32900,
-    image: "/images/bedroom.jpg",
+    image: asset("/images/bedroom.jpg"),
     badgeAr: null,
     badgeEn: null,
     stock: 2,
@@ -337,7 +338,7 @@ export const productSeeds: ProductSeed[] = [
     descEn: "Floating walnut console with wood slats, a grey marble panel and concealed lighting.",
     category: "living",
     price: 18900,
-    image: "/images/living-tv.jpg",
+    image: asset("/images/living-tv.jpg"),
     badgeAr: "جديد",
     badgeEn: "New",
     stock: 7,
@@ -351,7 +352,7 @@ export const productSeeds: ProductSeed[] = [
     descEn: "Floating walnut vanity with a marble top and a brass-framed LED mirror.",
     category: "baths",
     price: 12750,
-    image: "/images/bathroom.jpg",
+    image: asset("/images/bathroom.jpg"),
     badgeAr: "تسليم فوري",
     badgeEn: "Fast delivery",
     stock: 8,
@@ -365,7 +366,7 @@ export const productSeeds: ProductSeed[] = [
     descEn: "Aluminium and glass system with a wood-plank ceiling for balconies and sunrooms.",
     category: "outdoor",
     price: 16400,
-    image: "/images/balcony.jpg",
+    image: asset("/images/balcony.jpg"),
     badgeAr: null,
     badgeEn: null,
     stock: 5,
@@ -379,7 +380,7 @@ export const productSeeds: ProductSeed[] = [
     descEn: "Standard-size roller shutter with weather-resistant finish and professional fitting.",
     category: "outdoor",
     price: 6900,
-    image: "/images/exterior.jpg",
+    image: asset("/images/exterior.jpg"),
     badgeAr: null,
     badgeEn: null,
     stock: 12,
@@ -393,7 +394,7 @@ export const productSeeds: ProductSeed[] = [
     descEn: "A complete premium-finish display unit from our showroom — one piece available.",
     category: "kitchens",
     price: 21900,
-    image: "/images/showroom.jpg",
+    image: asset("/images/showroom.jpg"),
     badgeAr: "قطعة واحدة",
     badgeEn: "One only",
     stock: 1,

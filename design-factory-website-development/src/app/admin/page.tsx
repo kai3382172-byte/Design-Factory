@@ -1,3 +1,4 @@
+import { asset } from "@/lib/asset";
 import Link from "next/link";
 import { desc } from "drizzle-orm";
 import { db } from "@/db";
@@ -26,7 +27,7 @@ export default async function AdminPage() {
       <div className="mx-auto w-full max-w-5xl px-5">
         <div className="flex flex-wrap items-center justify-between gap-4">
           <div className="flex items-center gap-4">
-            <img src="/images/design-factory-logo.jpg" alt="Design Factory" className="h-16 w-16 rounded-xl bg-white object-contain" />
+            <img src={asset("/images/design-factory-logo.jpg")} alt="Design Factory" className="h-16 w-16 rounded-xl bg-white object-contain" />
             <div>
               <h1 className="text-2xl font-extrabold">{dictionary.ar.adminTitle}</h1>
               <p className="mt-1 text-xs text-ink/60">{dictionary.ar.adminSubtitle}</p>

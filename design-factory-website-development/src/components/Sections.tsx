@@ -1,5 +1,6 @@
 "use client";
 
+import { asset } from "@/lib/asset";
 import { useState, type FormEvent } from "react";
 import {
   ArrowRight,
@@ -64,7 +65,7 @@ export function AboutSection() {
       <div className="container-x relative grid items-center gap-14 lg:grid-cols-2">
         <div className="relative">
           <div className="overflow-hidden rounded-[2rem] shadow-[0_30px_70px_-35px_rgba(66,41,29,0.7)]">
-            <img src="/images/workshop.jpg" alt="Inside the Design Factory workshop" className="h-[360px] w-full object-cover sm:h-[500px]" loading="lazy" />
+            <img src={asset("/images/workshop.jpg")} alt="Inside the Design Factory workshop" className="h-[360px] w-full object-cover sm:h-[500px]" loading="lazy" />
           </div>
           <div className="absolute -bottom-6 start-4 end-4 mx-auto flex max-w-md items-center gap-4 rounded-2xl border border-ink/8 bg-white p-4 shadow-xl sm:start-8 sm:end-auto">
             <Logo height={64} />

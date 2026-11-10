@@ -1,3 +1,4 @@
+import { asset } from "@/lib/asset";
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import "./globals.css";
@@ -6,7 +7,7 @@ export const metadata: Metadata = {
   title: "Design Factory | Wood & Design — مطابخ وأثاث مخصص",
   description:
     "Design Factory — Custom interior & furniture solutions in Egypt. Kitchens, dressing rooms, bespoke furniture, shutters, aluminium & glass solutions, with after-sales care.",
-  icons: { icon: "/images/design-factory-logo.jpg" },
+  icons: { icon: asset("/images/design-factory-logo.jpg") },
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {

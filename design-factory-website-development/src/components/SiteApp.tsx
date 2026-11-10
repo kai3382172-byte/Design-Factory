@@ -1,5 +1,6 @@
 "use client";
 
+import { asset, IS_STATIC } from "@/lib/asset";
 import { useState, type FormEvent } from "react";
 import {
   ArrowRight,
@@ -224,7 +225,7 @@ function Hero({ shop = false }: { shop?: boolean }) {
   return (
     <section id={shop ? "shop-home" : "home"} className="relative isolate flex min-h-[620px] items-center overflow-hidden lg:min-h-[88vh]">
       <img
-        src={shop ? "/images/showroom.jpg" : "/images/hero-kitchen.jpg"}
+        src={shop ? asset("/images/showroom.jpg") : asset("/images/hero-kitchen.jpg")}
         alt={shop ? "Design Factory showroom" : "Design Factory luxury walnut kitchen"}
         className="hero-zoom absolute inset-0 -z-20 h-full w-full object-cover object-center"
       />
@@ -501,7 +502,7 @@ function Footer() {
         <div className="mt-14 flex flex-col items-center justify-between gap-3 border-t border-white/15 pt-6 text-xs text-white/50 sm:flex-row">
           <p>© {year} Design Factory · WOOD & DESIGN. {t("rights")}</p>
           <div className="flex items-center gap-4">
-            <a href="/admin" className="hover:text-white">Admin</a>
+            {!IS_STATIC && <a href="/admin" className="hover:text-white">Admin</a>}
             <a href={company.facebook} target="_blank" rel="noreferrer" className="hover:text-white">{t("facebook")}</a>
             <a href={company.instagram} target="_blank" rel="noreferrer" className="hover:text-white">{t("instagram")}</a>
           </div>
